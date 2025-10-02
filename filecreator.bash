@@ -8,7 +8,9 @@ echo "Entered $1"
 FILE=$1
 
 if [ -e $FILE ]; then
-        echo "File $FILE exists."
+	#file exists, so it must be emptied
+	>$FILE	
 else
-        echo "File $FILE does not exist."
+        #file does not exist, so it has to be created
+	touch $FILE
 fi
